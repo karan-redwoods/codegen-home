@@ -28,104 +28,104 @@ public class ServiceImplClassGenerator {
                         "import org.slf4j.Logger;\n" +
                         "import org.slf4j.LoggerFactory;\n" +
                         "import org.springframework.stereotype.Service;\n\n" +
-                        "import %s.dtos.SupplierResponseDto;\n" +
-                        "import %s.dtos.SupplierRequestDto;\n" +
+                        "import %s.dtos.UserResponseDto;\n" +
+                        "import %s.dtos.UserRequestDto;\n" +
                         "import %s.exceptions.NotFoundException;\n" +
                         "import %s.models.Address;\n" +
-                        "import %s.models.Supplier;\n" +
-                        "import %s.models.SupplierContact;\n" +
-                        "import %s.models.SupplierData;\n" +
-                        "import %s.repos.SupplierRepository;\n" +
+                        "import %s.models.User;\n" +
+                        "import %s.models.UserContact;\n" +
+                        "import %s.models.UserData;\n" +
+                        "import %s.repos.UserRepository;\n" +
                         "import %s.service.%s;\n\n" +
                         "@Service\n" +
                         "public class %s implements %s {\n\n" +
-                        "   private SupplierRepository supplierRepository;\n" +
+                        "   private UserRepository UserRepository;\n" +
                         "   private ModelMapper modelMapper;\n" +
                         "    private static final Logger LOGGER = LoggerFactory.getLogger(%s.class);\n\n" +
-                        "    public %s(SupplierRepository supplierRepository, ModelMapper modelMapper) {\n" +
-                        "        this.supplierRepository = supplierRepository;\n" +
+                        "    public %s(UserRepository UserRepository, ModelMapper modelMapper) {\n" +
+                        "        this.UserRepository = UserRepository;\n" +
                         "        this.modelMapper = modelMapper;\n" +
                         "    }\n\n" +
                         "    @Override\n" +
-                        "    public SupplierResponseDto getSupplier(Long supplierId) throws NotFoundException {\n" +
+                        "    public UserResponseDto getUser(Long UserId) throws NotFoundException {\n" +
                         "        try {\n" +
-                        "            Optional<Supplier> optionalSupplier = supplierRepository.findById(supplierId);\n" +
-                        "            if (optionalSupplier.isEmpty()) {\n" +
-                        "                throw new NotFoundException(\"Supplier Doesn't exist.\");\n" +
+                        "            Optional<User> optionalUser = UserRepository.findById(UserId);\n" +
+                        "            if (optionalUser.isEmpty()) {\n" +
+                        "                throw new NotFoundException(\"User Doesn't exist.\");\n" +
                         "            }\n\n" +
-                        "            return modelMapper.map(optionalSupplier.get(), SupplierResponseDto.class);\n" +
+                        "            return modelMapper.map(optionalUser.get(), UserResponseDto.class);\n" +
                         "        } catch (Exception ex) {\n" +
-                        "            LOGGER.error(\"Error occurred while processing getSupplier\", ex);\n" +
-                        "            throw new RuntimeException(\"Error occurred while processing getSupplier\", ex);\n" +
+                        "            LOGGER.error(\"Error occurred while processing getUser\", ex);\n" +
+                        "            throw new RuntimeException(\"Error occurred while processing getUser\", ex);\n" +
                         "        }\n" +
                         "    }\n\n" +
                         "    @Override\n" +
-                        "    public List<SupplierResponseDto> getSuppliers() {\n" +
+                        "    public List<UserResponseDto> getUsers() {\n" +
                         "        try {\n" +
-                        "            List<Supplier> suppliers = supplierRepository.findAll();\n" +
-                        "            List<SupplierResponseDto> supplierResponseDtos = null;\n" +
-                        "            if (!suppliers.isEmpty()) {\n" +
-                        "                supplierResponseDtos = new ArrayList<>();\n" +
-                        "                for (Supplier supplier : suppliers) {\n" +
-                        "                    supplierResponseDtos.add(modelMapper.map(supplier, SupplierResponseDto.class));\n" +
+                        "            List<User> Users = UserRepository.findAll();\n" +
+                        "            List<UserResponseDto> UserResponseDtos = null;\n" +
+                        "            if (!Users.isEmpty()) {\n" +
+                        "                UserResponseDtos = new ArrayList<>();\n" +
+                        "                for (User User : Users) {\n" +
+                        "                    UserResponseDtos.add(modelMapper.map(User, UserResponseDto.class));\n" +
                         "                }\n" +
                         "            }\n" +
-                        "            return supplierResponseDtos;\n" +
+                        "            return UserResponseDtos;\n" +
                         "        } catch (Exception ex) {\n" +
-                        "            LOGGER.error(\"Error occurred while processing getSuppliers\", ex);\n" +
-                        "            throw new RuntimeException(\"Error occurred while processing getSuppliers\", ex);\n" +
+                        "            LOGGER.error(\"Error occurred while processing getUsers\", ex);\n" +
+                        "            throw new RuntimeException(\"Error occurred while processing getUsers\", ex);\n" +
                         "        }\n" +
                         "    }\n\n" +
                         "    @Override\n" +
-                        "    public String deleteSupplier(Long supplierId) {\n" +
-                        "        if (supplierRepository.findById(supplierId).isPresent()) {\n" +
-                        "            supplierRepository.deleteById(supplierId);\n" +
-                        "            return \"Supplier Deleted Successfully!!\";\n" +
+                        "    public String deleteUser(Long UserId) {\n" +
+                        "        if (UserRepository.findById(UserId).isPresent()) {\n" +
+                        "            UserRepository.deleteById(UserId);\n" +
+                        "            return \"User Deleted Successfully!!\";\n" +
                         "        }\n" +
-                        "        return \"No Supplier exists in the database with the provided id.\";\n" +
+                        "        return \"No User exists in the database with the provided id.\";\n" +
                         "    }\n\n" +
                         "    @Override\n" +
-                        "    public SupplierResponseDto updateSupplier(Long supplierId, SupplierRequestDto supplierRequestDto) {\n" +
+                        "    public UserResponseDto updateUser(Long UserId, UserRequestDto UserRequestDto) {\n" +
                         "        try {\n" +
-                        "            Optional<Supplier> optionalSupplier = supplierRepository.findById(supplierId);\n" +
-                        "            if (optionalSupplier.isPresent()) {\n" +
-                        "                Supplier supplier = optionalSupplier.get();\n" +
-                        "                // Update supplier fields based on supplierRequestDto\n\n" +
-                        "                if (supplierRequestDto.getSupplierContact() != null) {\n" +
-                        "                    SupplierContact supplierContact = modelMapper.map(supplierRequestDto.getSupplierContact(), SupplierContact.class);\n" +
-                        "                    supplier.setSupplierContact(supplierContact);\n" +
+                        "            Optional<User> optionalUser = UserRepository.findById(UserId);\n" +
+                        "            if (optionalUser.isPresent()) {\n" +
+                        "                User User = optionalUser.get();\n" +
+                        "                // Update User fields based on UserRequestDto\n\n" +
+                        "                if (UserRequestDto.getUserContact() != null) {\n" +
+                        "                    UserContact UserContact = modelMapper.map(UserRequestDto.getUserContact(), UserContact.class);\n" +
+                        "                    User.setUserContact(UserContact);\n" +
                         "                }\n\n" +
                         "                // update address\n" +
-                        "                if (supplierRequestDto.getAddress() != null) {\n" +
-                        "                    List<Address> addressList = List.of(modelMapper.map(supplierRequestDto.getAddress(), Address[].class));\n" +
-                        "                    supplier.setAddress(addressList);\n" +
+                        "                if (UserRequestDto.getAddress() != null) {\n" +
+                        "                    List<Address> addressList = List.of(modelMapper.map(UserRequestDto.getAddress(), Address[].class));\n" +
+                        "                    User.setAddress(addressList);\n" +
                         "                }\n\n" +
-                        "                // update Supplier data\n" +
-                        "                if (supplierRequestDto.getSupplierData() != null) {\n" +
-                        "                    List<SupplierData> supplierDataList = List.of(modelMapper.map(supplierRequestDto.getSupplierData(), SupplierData[].class));\n" +
-                        "                    supplier.setSupplierData(supplierDataList);\n" +
+                        "                // update User data\n" +
+                        "                if (UserRequestDto.getUserData() != null) {\n" +
+                        "                    List<UserData> UserDataList = List.of(modelMapper.map(UserRequestDto.getUserData(), UserData[].class));\n" +
+                        "                    User.setUserData(UserDataList);\n" +
                         "                }\n\n" +
                         "                // Update other fields\n" +
                         "                // ...\n\n" +
-                        "                supplier.setLast_updated_by(\"admin\");\n" +
-                        "                supplier.setLast_updated_on(System.currentTimeMillis());\n\n" +
-                        "                return modelMapper.map(supplierRepository.save(supplier), SupplierResponseDto.class);\n" +
+                        "                User.setLast_updated_by(\"admin\");\n" +
+                        "                User.setLast_updated_on(System.currentTimeMillis());\n\n" +
+                        "                return modelMapper.map(UserRepository.save(User), UserResponseDto.class);\n" +
                         "            } else {\n" +
                         "                return null;\n" +
                         "            }\n" +
                         "        } catch (Exception ex) {\n" +
-                        "            LOGGER.error(\"Error occurred while processing updateSuppliers\", ex);\n" +
-                        "            throw new RuntimeException(\"Error occurred while processing updateSuppliers\", ex);\n" +
+                        "            LOGGER.error(\"Error occurred while processing updateUsers\", ex);\n" +
+                        "            throw new RuntimeException(\"Error occurred while processing updateUsers\", ex);\n" +
                         "        }\n" +
                         "    }\n\n" +
                         "    @Override\n" +
-                        "    public Long addSupplier(Supplier supplier) {\n" +
+                        "    public Long addUser(User User) {\n" +
                         "        try {\n" +
-                        "            Supplier newSupplier = supplierRepository.save(supplier);\n" +
-                        "            return newSupplier.getId();\n" +
+                        "            User newUser = UserRepository.save(User);\n" +
+                        "            return newUser.getId();\n" +
                         "        } catch (Exception ex) {\n" +
-                        "            LOGGER.error(\"Error occurred while processing addSuppliers\", ex);\n" +
-                        "            throw new RuntimeException(\"Error occurred while processing addSuppliers\", ex);\n" +
+                        "            LOGGER.error(\"Error occurred while processing addUsers\", ex);\n" +
+                        "            throw new RuntimeException(\"Error occurred while processing addUsers\", ex);\n" +
                         "        }\n" +
                         "    }\n" +
                         "}\n",

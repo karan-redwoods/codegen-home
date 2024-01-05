@@ -41,4 +41,25 @@ public class EntityClassGenerator {
 
         codeWriter.writeToFile(entityName + ".java", content);
     }
+    public void generateEntityClassRole(String entityName){
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        Properties prop = new Properties();
+
+        try {
+            prop.load(new FileInputStream("src/main/resources/" + entityName.toLowerCase() + "-entity.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Set<String> propertyNames = prop.stringPropertyNames();
+        String content = "package " + applicationConfig.getPackageName() + ".models;\n\n" +
+                "public class " + entityName + "{\n\n";
+        for(String propertyName : propertyNames){
+            String propertyValue = prop.getProperty(propertyName);
+            content = content + "   private " + propertyValue + " "+ propertyName +";\n";
+        }
+        content = content + "}";
+
+        codeWriter.writeToFile(entityName + ".java", content);
+    }
 }

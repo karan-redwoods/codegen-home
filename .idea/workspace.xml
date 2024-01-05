@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c186dec-ba9b-477a-a342-c71939382370" name="Changes" comment="" />
+    <list default="true" id="4c186dec-ba9b-477a-a342-c71939382370" name="Changes" comment="user management form">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/CodegenUserApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/CodegenUserApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/EntityClassGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/EntityClassGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/EntityClassGeneratorRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/EntityClassGeneratorRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/ServiceImplClassGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/redwoods/codegen/ServiceImplClassGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller-entity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller-entity.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dtos-application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dtos-application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/user-entity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user-entity.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/user-role-entity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user-role-entity.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -22,9 +58,53 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/karan/IdeaProjects/codegen-home/codegen-home/src/main/resources"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\karan\IdeaProjects\codegen-home\codegen-home\src\main\resources" />
+      <recent name="C:\Users\karan\IdeaProjects\codegen-home\codegen-home" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.redwoods.codegen" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CodegenUserApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.redwoods.codegen.CodegenUserApp" />
+      <module name="codegen-UserManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.redwoods.codegen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="codegen-UserManagement" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="codegen-UserManagement" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CodegenUserApp" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,5 +115,16 @@
       <updated>1704301051674</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
